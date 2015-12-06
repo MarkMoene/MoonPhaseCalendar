@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Algorithm" />
+		<Option pch_mode="2" />
+		<Option compiler="microsoft_visual_c_60" />
+		<Build>
+			<Target title="Win32 Release">
+				<Option output="Camera" prefix_auto="1" extension_auto="1" />
+				<Option object_output="D:/00_IP/SpmDev/Camera4/Project/CodeBlocks/.objs" />
+				<Option type="1" />
+				<Option compiler="microsoft_visual_c_60" />
+				<Compiler>
+					<Add option="/Og" />
+					<Add option="/Ox" />
+					<Add option="/DNDEBUG" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="/W3" />
+		</Compiler>
+		<Unit filename="../../spike/johnwalker/moont32s/MOONCALC.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../spike/normalise-mktime.cpp" />
+		<Unit filename="../../spike/voidware/phase-3.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

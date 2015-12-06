@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Moon Phase Calendar">
+		<Project filename="SourceCode.cbp" />
+		<Project filename="Algorithm.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
