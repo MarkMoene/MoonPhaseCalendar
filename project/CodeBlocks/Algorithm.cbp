@@ -24,6 +24,8 @@
 		<Unit filename="../../spike/johnwalker/moont32s/MOONCALC.C">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../../spike/normalise-date/mktime-normalise.cpp" />
+		<Unit filename="../../spike/normalise-date/mktime.cpp" />
 		<Unit filename="../../spike/normalise-mktime.cpp" />
 		<Unit filename="../../spike/voidware/phase-3.cpp" />
 		<Extensions>
