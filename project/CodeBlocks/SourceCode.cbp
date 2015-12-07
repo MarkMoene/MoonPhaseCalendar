@@ -21,6 +21,9 @@
 		<Compiler>
 			<Add option="/W3" />
 		</Compiler>
+		<Unit filename="../../.gitignore" />
+		<Unit filename="../../LICENSE" />
+		<Unit filename="../../README.md" />
 		<Unit filename="../../arduino/MoonPhaseCalendar/MoonPhaseCalendar.ino" />
 		<Unit filename="../../test/arduino.hpp" />
 		<Unit filename="../../test/lest.hpp" />
