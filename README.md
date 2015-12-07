@@ -67,7 +67,7 @@ For the moon phase we need a function that can compute the phase from date. ...
 
 Developing and testing the software
 ------------------------------------
-The moon phase calendar software is developed using both the Arduino IDE and a [C++11](https://en.wikipedia.org/wiki/C%2B%2B11) compiler on a personal computer. The software is developed and tested using the [lest test framework](https://github.com/martinmoene/lest). The Arduino IDE is used to verify that what we develop as a C++ program is acceptable as an Arduino program. The IDE is also used to upload the program to the Pro Trinket.
+The moon phase calendar software is developed using both the Arduino IDE and a [C++11](https://en.wikipedia.org/wiki/C%2B%2B11) compiler on a personal computer. The software is developed and tested using the [*lest* test framework](https://github.com/martinmoene/lest). The Arduino IDE is used to verify that what we develop as a C++ program is acceptable as an Arduino program. The IDE is also used to upload the program to the Pro Trinket.
 
 ### Setup Arduino IDE for Pro Trinket
 
@@ -77,10 +77,20 @@ Notes and references
 ----------------------
 
 ### Arduino
+[1] Arduino. [Home](https://www.arduino.cc/).  
+[2] Arduino. [Language Reference](https://www.arduino.cc/en/Reference/HomePage).  
+[3] Arduino. [Interfacing with Hardware](http://playground.arduino.cc/Main/InterfacingWithHardware).  
 
 ### Hardware
+[4] Adafruit. [Pro Trinket](https://www.adafruit.com/products/2010).  
+[5] Adafruit. [Introducing Pro Trinket](https://learn.adafruit.com/introducing-pro-trinket/).  
+[6] Atmel. [Datasheet of ATmega328 Microcontroller (PDF)](http://adafruit.com/datasheets/ATMEGA328P.pdf).  
+[7] Arduino. [TM1637 is a chip for driving 7-segment displays](http://playground.arduino.cc/Main/TM1637).  
+[8] Grove. [4-Digit Display](http://www.seeedstudio.com/wiki/Grove_-_4-Digit_Display).  
 
 ### Moon phase
+[9] John Walker. [Moontool for Windows](http://www.fourmilab.ch/moontoolw/). 16 March 1999.  
+[10] Voidware. [Moon phase](http://www.voidware.com/moon_phase.htm), using integral numbers.
 
 Appendix A: test specification
 -------------------------------
