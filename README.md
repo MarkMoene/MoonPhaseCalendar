@@ -60,7 +60,7 @@ To perform its function the program must be able to:
 ### Compute new date
 To compute a new date from an existing one we need a function to advance a date, say 28 February 2016 to 29 February 2016 (note the leap year) and from 29 February to 1 March 2016. The standard C library contains funtion [mktime]() that allows to *just add a day* to a date and compute a valid date from a probably invalid date. So given 30 February 2016 `mktime()` will adjust the date to 1 March 2016.
 
-As the standard C library functions aren't readily available in the Arduino environment, we created the needed functionality inspired on function [mktime()](https://www.sourceware.org/git/gitweb.cgi?p=newlib-cygwin.git;a=blob_plain;f=newlib/libc/time/mktime.c;hb=HEAD) from the [newlib library](https://en.wikipedia.org/wiki/Newlib) maintained by [Red Hat](). Our function only handles dates (not time).
+As the standard C library function `mktime()` isn't readily available in the Arduino environment, we created the needed functionality inspired on function [mktime()](https://www.sourceware.org/git/gitweb.cgi?p=newlib-cygwin.git;a=blob_plain;f=newlib/libc/time/mktime.c;hb=HEAD) from the [newlib library](https://en.wikipedia.org/wiki/Newlib) maintained by [Red Hat](). Our function only handles dates (not time).
 
 ### Compute moon phase
 For the moon phase we need a function that can compute the phase from date. ...
