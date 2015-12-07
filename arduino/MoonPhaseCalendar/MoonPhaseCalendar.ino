@@ -1,6 +1,8 @@
 // Moon Phase Calendar for Arduino, using Pro Trinket 3V/12MHz
 // Copyright 2015 by Mark Moene
 
+#include <assert.h>
+
 #define dimension_of( a ) ( sizeof(a) / sizeof(0[a]) )
 
 // Configuration: start date
@@ -76,7 +78,9 @@ void display_moon_phase( int const phase )
     };
     static_assert( dimension_of(pattern) == phase_count, "expecting #pattern == pin_moon_count" );
 
-    const int code = pattern[ phase % phase_count ];
+    assert( 0 <= phase && phase < phase_count );
+
+    const int code = pattern[ phase ];
 
     for ( int i = 0; i < pin_moon_count; ++i )
     {
