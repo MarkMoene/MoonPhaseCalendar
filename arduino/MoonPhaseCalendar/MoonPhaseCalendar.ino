@@ -28,18 +28,18 @@ const int pin_date_clk = 2;
 
 // Date display:
 
-void setup_date_display()
-{
-    pinMode( pin_date_sda, OUTPUT );
-    pinMode( pin_date_clk, OUTPUT );
-}
-
 struct Date
 {
     int year;
     int month;
     int day;
 };
+
+void setup_date_display()
+{
+    pinMode( pin_date_sda, OUTPUT );
+    pinMode( pin_date_clk, OUTPUT );
+}
 
 void display_date( Date const date )
 {
