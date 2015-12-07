@@ -67,7 +67,7 @@ For the moon phase we need a function that can compute the phase from date. ...
 
 Developing and testing the software
 ------------------------------------
-The moon phase calendar software is developed using both the Arduino IDE and a [C++11](https://en.wikipedia.org/wiki/C%2B%2B11) compiler on a personal computer. The software is developed and tested using the [*lest* test framework](https://github.com/martinmoene/lest). The Arduino IDE is used to verify that what we develop as a C++ program is acceptable as an Arduino program. The IDE is also used to upload the program to the Pro Trinket.
+The moon phase calendar software is developed using both the Arduino IDE and a separate [C++11](https://en.wikipedia.org/wiki/C%2B%2B11) compiler on a personal computer. The software is developed and tested as a PC program using the [*lest* test framework](https://github.com/martinmoene/lest). The Arduino IDE is used to verify that what we develop as a C++ program is acceptable as an Arduino program. The IDE is also used to upload the program to the Pro Trinket.
 
 ### Setup Arduino IDE for Pro Trinket
 To be able to compile programs for the Pro Trinket board and to upload the result to it via [USB](https://en.wikipedia.org/wiki/USB), several settings must made in the Arduino IDE. This is described in [Setup Arduino IDE for Pro Trinket](doc/Setup Arduino IDE for Pro Trinket.md).
