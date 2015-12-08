@@ -80,7 +80,7 @@ The program uses the [Grove 4-Digit Display](http://www.seeedstudio.com/wiki/Gro
 
 - Download the [library's latest .zip file](https://github.com/avishorp/TM1637/releases/latest) in a convenient (temporary) location.
 - Start the Arduino IDE.
-- Select *Sketch > Include Library > .ZIP Library* and 
+- Select *Sketch > Include Library > .ZIP Library...* and 
 - Select the downloaded file `TM1637-1.0.0.zip`.
 
 This installs the library in the `Arduino\libraries\TM1637-1.0.0` subdirectory in your home directory. The library appears under *Contributed libraries* at the bottom of the *Sketch > Include Library* list. You may remove the downloaded .zip file now.
