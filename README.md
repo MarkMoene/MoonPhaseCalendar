@@ -69,6 +69,9 @@ Developing and testing the software
 ------------------------------------
 The moon phase calendar software is developed using both the Arduino IDE and a separate [C++11](https://en.wikipedia.org/wiki/C%2B%2B11) compiler on a personal computer. The software is developed and tested as a PC program using the [*lest* test framework](https://github.com/martinmoene/lest). The Arduino IDE is used to verify that what we develop as a C++ program is acceptable as an Arduino program. The IDE is also used to upload the program to the Pro Trinket.
 
+### Prerequisites
+In what follows, it is expected that the [Arduino IDE](https://www.arduino.cc/en/Main/Software) is available. If you want to compile and run the tests, a C++11 compiler such as [GNU C++](https://gcc.gnu.org/) or [Visual C++ 2015](https://www.visualstudio.com/) is needed, see [11-13]. 
+ 
 ### Setup Arduino IDE for Pro Trinket
 To be able to compile programs for the Pro Trinket board and to upload the result to it via [USB](https://en.wikipedia.org/wiki/USB), several settings must made in the Arduino IDE. This is described in [Setup Arduino IDE for Pro Trinket](doc/Setup Arduino IDE for Pro Trinket.md).
 
@@ -76,9 +79,9 @@ To be able to compile programs for the Pro Trinket board and to upload the resul
 The program uses the [Grove 4-Digit Display](http://www.seeedstudio.com/wiki/Grove_-_4-Digit_Display) with a [TM1637 chip](http://blog.avishorp.me/2014/03/arduino-library-for-tm1637-display.html) to present the date. To enable using it from our program, install the [Arduino library for TM1637](https://github.com/avishorp/TM1637) as follows:
 
 - Download the [library's latest .zip file](https://github.com/avishorp/TM1637/releases/latest) in a convenient (temporary) location.
-- Start the Arduino IDE
+- Start the Arduino IDE.
 - Select *Sketch > Include Library > .ZIP Library* and 
-- Select the downloaded file `TM1637-1.0.0.zip`
+- Select the downloaded file `TM1637-1.0.0.zip`.
 
 This installs the library in the `Arduino\libraries\TM1637-1.0.0` subdirectory in your home directory. The library appears under *Contributed libraries* at the bottom of the *Sketch > Include Library* list. You may remove the downloaded .zip file now.
 
@@ -102,6 +105,11 @@ Notes and references
 ### Moon phase
 [9] John Walker. [Moontool for Windows](http://www.fourmilab.ch/moontoolw/). 16 March 1999.  
 [10] Voidware. [Moon phase](http://www.voidware.com/moon_phase.htm), using integral numbers.
+
+### C++11 Compilers
+[11] [Microsoft Visual C++ 2015](https://www.visualstudio.com/).  
+[12] [GNU Compiler Collection binary distributions](https://gcc.gnu.org/install/binaries.html).  
+[13] [Stephan T. Lavavej's MinGW distribution](http://nuwen.net/mingw.html).
 
 Appendix A: test specification
 -------------------------------
