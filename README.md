@@ -72,6 +72,16 @@ The moon phase calendar software is developed using both the Arduino IDE and a s
 ### Setup Arduino IDE for Pro Trinket
 To be able to compile programs for the Pro Trinket board and to upload the result to it via [USB](https://en.wikipedia.org/wiki/USB), several settings must made in the Arduino IDE. This is described in [Setup Arduino IDE for Pro Trinket](doc/Setup Arduino IDE for Pro Trinket.md).
 
+### Install Arduino library for TM1637 (LED Driver)
+The program uses the [Grove 4-Digit Display](http://www.seeedstudio.com/wiki/Grove_-_4-Digit_Display) with a [TM1637 chip](http://blog.avishorp.me/2014/03/arduino-library-for-tm1637-display.html) to present the date. To enable using it from our program, install the [Arduino library for TM1637](https://github.com/avishorp/TM1637) as follows:
+
+- Download the [library's latest .zip file](https://github.com/avishorp/TM1637/releases/latest) in a convenient (temporary) location.
+- Start the Arduino IDE
+- Select *Sketch > Include Library > .ZIP Library* and 
+- Select the downloaded file `TM1637-1.0.0.zip`
+
+This installs the library in the `Arduino\libraries\TM1637-1.0.0` subdirectory in your home directory. The library appears under *Contributed libraries* at the bottom of the *Sketch > Include Library* list. You may remove the downloaded .zip file now.
+
 ### Developing and testing the software
 
 Notes and references
