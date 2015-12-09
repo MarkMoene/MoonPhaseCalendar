@@ -1,0 +1,6 @@
+// mock display
+
+#ifndef TM1673DISPLAY_H_INCLUDED
+#define TM1673DISPLAY_H_INCLUDED
+
+#endif // TM1673DISPLAY_H_INCLUDED

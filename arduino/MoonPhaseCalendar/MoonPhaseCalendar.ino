@@ -1,6 +1,7 @@
 // Moon Phase Calendar for Arduino, using Pro Trinket 3V/12MHz
 // Copyright 2015 by Mark Moene
 
+#include <TM1637Display.h>
 #include <assert.h>
 
 #define dimension_of( a ) ( sizeof(a) / sizeof(0[a]) )
