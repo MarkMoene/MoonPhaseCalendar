@@ -25,9 +25,11 @@
 		<Unit filename="../../LICENSE" />
 		<Unit filename="../../README.md" />
 		<Unit filename="../../arduino/MoonPhaseCalendar/MoonPhaseCalendar.ino" />
+		<Unit filename="../../test/TM1637Display.h" />
 		<Unit filename="../../test/arduino.hpp" />
 		<Unit filename="../../test/lest.hpp" />
-		<Unit filename="../../test/t.bat" />
+		<Unit filename="../../test/mk-gcc.bat" />
+		<Unit filename="../../test/mk-msvc.bat" />
 		<Unit filename="../../test/test.cpp" />
 		<Extensions>
 			<code_completion />
