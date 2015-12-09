@@ -31,10 +31,10 @@ std::ostream & operator<< ( std::ostream & os, Date const & d )
 
 #define CASE( name ) lest_CASE( specification(), name )
 
-lest::tests & specification() 
-{ 
-    static lest::tests tests; 
-    return tests; 
+lest::tests & specification()
+{
+    static lest::tests tests;
+    return tests;
 }
 
 // Test specification
@@ -90,31 +90,31 @@ CASE( "Electronics: Moon phase display sets pins properly" )
     };
     static_assert( dimension_of(pattern) == phase_count, "expecting #pattern == pin_moon_count" );
 
-    void init_board();
-    
+    init_board();
+
     for ( int i = 0; i < 8; ++i )
     {
         display_moon_phase( i );
-        
+
         EXPECT( pattern[i] == g_pin_value >> pin_moon_first );
     }
 }
 
 CASE( "Electronics: Date display: ... [.]" )
 {
-    void init_board();
+    init_board();
     EXPECT( !"Implement" );
 }
 
 CASE( "Electronics: Rotary encoder: ... [.]" )
 {
-    void init_board();
+    init_board();
     EXPECT( !"Implement" );
 }
 
 CASE( "Electronics: Button: ... [.]" )
 {
-    void init_board();
+    init_board();
     EXPECT( !"Implement" );
 }
 
@@ -190,6 +190,50 @@ CASE( "Algorithm: Last quarter on 3 Nov 2015 [moon]" )
     EXPECT( moon_phase( {2015, 11, 3} ) == ThirdQuarter );
 }
 
+CASE( "Acceptance: New moon on 13 Oct 2015 [.accept]" )
+{
+    init_board();
+
+    Date next = once( {2015, 10, 13} );
+
+    EXPECT(   next == ( Date{2015, 10, 14} ) );
+    EXPECT(   1310 == display.m_value );
+    EXPECT( 0b0000 == g_pin_value >> pin_moon_first );
+}
+
+CASE( "Acceptance: First quarter on 20 Oct 2015 [.accept]" )
+{
+    init_board();
+
+    Date next = once( {2015, 10, 20} );
+
+    EXPECT(   next == ( Date{2015, 10, 21} ) );
+    EXPECT(   2010 == display.m_value );
+    EXPECT( 0b0011 == g_pin_value >> pin_moon_first );
+}
+
+CASE( "Acceptance: Full moon on 27 Oct 2015 [.accept]" )
+{
+    init_board();
+
+    Date next = once( {2015, 10, 27} );
+
+    EXPECT(   next == ( Date{2015, 10, 28} ) );
+    EXPECT(   2710 == display.m_value );
+    EXPECT( 0b1111 == g_pin_value >> pin_moon_first );
+}
+
+CASE( "Acceptance: Last quarter on 3 Nov 2015 [.accept]" )
+{
+    init_board();
+
+    Date next = once( {2015, 11, 3} );
+
+    EXPECT(   next == ( Date{2015, 11, 4} ) );
+    EXPECT(    311 == display.m_value );
+    EXPECT( 0b1100 == g_pin_value >> pin_moon_first );
+}
+
 CASE( "App: date-moon phase [.app]" )
 {
     char const * const phase[] =
@@ -205,7 +249,7 @@ CASE( "App: date-moon phase [.app]" )
     };
 
     Date day{2015, 11, 1};
-    
+
     for (;;)
     {
         day = next_date( day );
