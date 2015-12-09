@@ -4,13 +4,15 @@
 #include <TM1637Display.h>
 #include <assert.h>
 
-#define dimension_of( a ) ( sizeof(a) / sizeof(0[a]) )
-
-// Configuration: start date
+// ----------------------------------------------------------------------------
+// Configuration:
 
 // Start date, must be date valid for moon phase algorithm:
 // from 1-1-1900 to 31-12-2199 inclusive.
 #define START_DATE { 2015, 11, 1 }
+
+// Time showing blank display when updating year or date:
+const int display_blank_pause_ms = 100;
 
 // Configuration: Pins
 
@@ -22,6 +24,13 @@ const int phase_count    = 8;
 // Date 4-digit display:
 const int pin_date_sda = 1;
 const int pin_date_clk = 2;
+
+// End configuration.
+
+#define dimension_of( a ) ( sizeof(a) / sizeof(0[a]) )
+
+// ----------------------------------------------------------------------------
+// Hardware-related
 
 // Rotary encoder:
 // ....
@@ -38,15 +47,46 @@ struct Date
     int day;
 };
 
+TM1637Display display( pin_date_clk, pin_date_clk );
+
 void setup_date_display()
 {
-    pinMode( pin_date_sda, OUTPUT );
-    pinMode( pin_date_clk, OUTPUT );
+    // display constructor sets up the pins
+    const int max_brightness = 0xf;
+
+    display.setBrightness( max_brightness );
 }
 
-void display_date( Date const date )
+void display_pause( int const pause_ms )
 {
-    (void) date;
+    delay( pause_ms );
+}
+
+void display_blank()
+{
+    uint8_t const segs_off   = 0;
+    uint8_t const segments[] = { segs_off, segs_off, segs_off, segs_off };
+
+    display.setSegments( segments, 4, 0 );
+}
+
+void display_number( int const x, int const pause_ms )
+{
+    using leading_zeros = bool;
+    using length = uint8_t;
+    using pos = uint8_t;
+
+    display_blank();
+    display_pause( pause_ms );
+    display.showNumberDec( x, leading_zeros(true), length(4), pos(0) );
+}
+
+void display_date( Date const date, int const pause_ms = display_blank_pause_ms )
+{
+    // blank, pause, yyyy, pause, blank, pause, ddmm
+    display_number( date.year, pause_ms );
+    display_pause ( pause_ms );
+    display_number( 100 * date.day + date.month, pause_ms );
 }
 
 // Moon phase display:
