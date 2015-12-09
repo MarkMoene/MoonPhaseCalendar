@@ -1,0 +1,6 @@
+Changes for Moon Phase Calendar for Arduino, using Pro Trinket
+
+
+Version 0.0.0 - 2015-12-06 (martin)
+
+Initial commits
