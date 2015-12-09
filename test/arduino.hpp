@@ -61,21 +61,25 @@ bool digitalRead( int pin )
 }
 
 #ifdef _MSC_VER
+
 # include <chrono>
 # include <thread>
 
 void delayMicroseconds( int us )
 {
-    std::this_thread::sleep_for( std::chrono::milliseconds( us / 1000 ) );
+    std::this_thread::sleep_for( std::chrono::microseconds( us ) );
 }
-#else
+#else   
+
+// gcc requires posix threading for chrono, we'll use usleep():
 # include <unistd.h>
 
 void delayMicroseconds( int us )
 {
     usleep( us );
 }
-#endif
+#endif // _MSC_VER
+
 void delay( int ms )
 {
     delayMicroseconds( 1000 * ms );
