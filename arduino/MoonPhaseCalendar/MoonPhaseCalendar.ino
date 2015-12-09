@@ -47,7 +47,7 @@ struct Date
     int day;
 };
 
-TM1637Display display( pin_date_clk, pin_date_clk );
+TM1637Display display( pin_date_clk, pin_date_sda );
 
 void setup_date_display()
 {
