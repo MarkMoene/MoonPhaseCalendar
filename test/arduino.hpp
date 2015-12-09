@@ -3,8 +3,6 @@
 #ifndef ARDUINO_HPP_INCLUDED
 #define ARDUINO_HPP_INCLUDED
 
-#include <unistd.h>
-
 const int INPUT  = 0;
 const int OUTPUT = 1;
 
@@ -16,17 +14,17 @@ int bit( int const pos )
 template< typename T>
 void bitClear( T & x, int const pos )
 {
-   x &= ~bit( pos ); 
+   x &= ~bit( pos );
 }
 
 template< typename T>
 void bitSet( T & x, int const pos )
 {
-   x |= bit( pos ); 
+   x |= bit( pos );
 }
 
 template< typename T>
-void bitWrite( T & x, int const pos, bool const on ) 
+void bitWrite( T & x, int const pos, bool const on )
 {
     on ? x |=  bit( pos )
        : x &= ~bit( pos );
@@ -62,11 +60,27 @@ bool digitalRead( int pin )
     return bitRead( g_pin_value, pin );
 }
 
-void delayMicroseconds( int us ) 
+#ifdef _MSC_VER
+# include <chrono>
+# include <thread>
+
+void delayMicroseconds( int us )
 {
-    usleep( 1000 );
+    std::this_thread::sleep_for( std::chrono::milliseconds( us / 1000 ) );
 }
-    
+#else
+# include <unistd.h>
+
+void delayMicroseconds( int us )
+{
+    usleep( us );
+}
+#endif
+void delay( int ms )
+{
+    delayMicroseconds( 1000 * ms );
+}
+
 #endif // ARDUINO_HPP_INCLUDED
 
 // end of file

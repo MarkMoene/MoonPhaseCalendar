@@ -210,7 +210,7 @@ CASE( "App: date-moon phase [.app]" )
     {
         day = next_date( day );
         std::cout << day << " " << phase[ moon_phase( day ) ] << "\r";
-        usleep( 300000 );
+        delay( 300 );
     }
 }
 
