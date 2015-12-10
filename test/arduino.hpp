@@ -39,10 +39,13 @@ bool bitRead( T const x, int const pos )
 int g_pin_direction = INPUT;
 int g_pin_value     = 0;
 
-void init_board()
+void mock_setup()
 {
     g_pin_direction = INPUT;
     g_pin_value     = 0;
+
+    extern void setup();
+    setup();
 }
 
 void pinMode( int pin, bool out )
@@ -69,7 +72,7 @@ void delayMicroseconds( int us )
 {
     std::this_thread::sleep_for( std::chrono::microseconds( us ) );
 }
-#else   
+#else
 
 // gcc requires posix threading for chrono, we'll use usleep():
 # include <unistd.h>

@@ -90,7 +90,7 @@ CASE( "Electronics: Moon phase display sets pins properly" )
     };
     static_assert( dimension_of(pattern) == phase_count, "expecting #pattern == pin_moon_count" );
 
-    init_board();
+    mock_setup();
 
     for ( int i = 0; i < 8; ++i )
     {
@@ -102,19 +102,19 @@ CASE( "Electronics: Moon phase display sets pins properly" )
 
 CASE( "Electronics: Date display: ... [.]" )
 {
-    init_board();
+    mock_setup();
     EXPECT( !"Implement" );
 }
 
 CASE( "Electronics: Rotary encoder: ... [.]" )
 {
-    init_board();
+    mock_setup();
     EXPECT( !"Implement" );
 }
 
 CASE( "Electronics: Button: ... [.]" )
 {
-    init_board();
+    mock_setup();
     EXPECT( !"Implement" );
 }
 
@@ -192,7 +192,7 @@ CASE( "Algorithm: Last quarter on 3 Nov 2015 [moon]" )
 
 CASE( "Acceptance: New moon on 13 Oct 2015 [.accept]" )
 {
-    init_board();
+    mock_setup();
 
     Date next = once( {2015, 10, 13} );
 
@@ -203,7 +203,7 @@ CASE( "Acceptance: New moon on 13 Oct 2015 [.accept]" )
 
 CASE( "Acceptance: First quarter on 20 Oct 2015 [.accept]" )
 {
-    init_board();
+    mock_setup();
 
     Date next = once( {2015, 10, 20} );
 
@@ -214,7 +214,7 @@ CASE( "Acceptance: First quarter on 20 Oct 2015 [.accept]" )
 
 CASE( "Acceptance: Full moon on 27 Oct 2015 [.accept]" )
 {
-    init_board();
+    mock_setup();
 
     Date next = once( {2015, 10, 27} );
 
@@ -225,7 +225,7 @@ CASE( "Acceptance: Full moon on 27 Oct 2015 [.accept]" )
 
 CASE( "Acceptance: Last quarter on 3 Nov 2015 [.accept]" )
 {
-    init_board();
+    mock_setup();
 
     Date next = once( {2015, 11, 3} );
 
