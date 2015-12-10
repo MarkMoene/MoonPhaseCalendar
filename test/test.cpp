@@ -77,6 +77,24 @@ CASE( "Convenience: setbit manipulates proper bit" )
     }
 }
 
+CASE( "Electronics: Rotary encoder: ... [.]" )
+{
+    mock_setup();
+    EXPECT( !"Implement" );
+}
+
+CASE( "Electronics: Button: ... [.]" )
+{
+    mock_setup();
+    EXPECT( !"Implement" );
+}
+
+CASE( "Electronics: Date display: ... [.]" )
+{
+    mock_setup();
+    EXPECT( !"Implement" );
+}
+
 CASE( "Electronics: Moon phase display sets pins properly" )
 {
     static int pattern[] =
@@ -100,24 +118,6 @@ CASE( "Electronics: Moon phase display sets pins properly" )
 
         EXPECT( pattern[i] == g_pin_value >> pin_moon_first );
     }
-}
-
-CASE( "Electronics: Date display: ... [.]" )
-{
-    mock_setup();
-    EXPECT( !"Implement" );
-}
-
-CASE( "Electronics: Rotary encoder: ... [.]" )
-{
-    mock_setup();
-    EXPECT( !"Implement" );
-}
-
-CASE( "Electronics: Button: ... [.]" )
-{
-    mock_setup();
-    EXPECT( !"Implement" );
 }
 
 CASE( "Algorithm: A leap year if divisible by 400 [leap]" )
