@@ -121,8 +121,8 @@ Convenience: bit tests false for unset bits
 Convenience: setbit manipulates proper bit
 Electronics: Rotary encoder: ... [.rotary]
 Electronics: Button: ... [.button]
-Electronics: Date display reports 31 Dec as 3112 [display]
-Electronics: Date display reports 1 Jan as 0101 [display]
+Electronics: Date display reports 31 Dec as 3112 [date]
+Electronics: Date display reports 1 Jan as 0101 [date]
 Electronics: Moon phase display sets pins properly [moon]
 Algorithm: A leap year if divisible by 400 [leap]
 Algorithm: A leap year if divisible by 4 but not by 100 [leap]
@@ -140,4 +140,4 @@ Acceptance: New moon on 13 Oct 2015 [.accept]
 Acceptance: First quarter on 20 Oct 2015 [.accept]
 Acceptance: Full moon on 27 Oct 2015 [.accept]
 Acceptance: Last quarter on 3 Nov 2015 [.accept]
-```
+App: date-moon phase [.app]```

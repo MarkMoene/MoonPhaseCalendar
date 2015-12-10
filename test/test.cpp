@@ -89,7 +89,7 @@ CASE( "Electronics: Button: ... [.button]" )
     EXPECT( !"Implement" );
 }
 
-CASE( "Electronics: Date display reports 31 Dec as 3112 [display]" )
+CASE( "Electronics: Date display reports 31 Dec as 3112 [date]" )
 {
     mock_setup();
 
@@ -98,7 +98,7 @@ CASE( "Electronics: Date display reports 31 Dec as 3112 [display]" )
     EXPECT( display.m_value == 3112 );
 }
 
-CASE( "Electronics: Date display reports 1 Jan as 0101 [display]" )
+CASE( "Electronics: Date display reports 1 Jan as 0101 [date]" )
 {
     mock_setup();
 
