@@ -17,13 +17,13 @@ const int display_blank_pause_ms = 100;
 // Configuration: Pins
 
 // Moon phase output (contiguous pins):
-const int pin_moon_first = 9;
+const int pin_moon_first = 10;  // #13: onboard LED
 const int pin_moon_count = 4;
 const int phase_count    = 8;
 
 // Date 4-digit display:
-const int pin_date_sda = 1;
-const int pin_date_clk = 2;
+const int pin_date_sda   = 1;
+const int pin_date_scl   = 2;
 
 // End configuration.
 
@@ -49,7 +49,7 @@ struct Date
     int day;
 };
 
-TM1637Display display( pin_date_clk, pin_date_sda );
+TM1637Display display( pin_date_scl, pin_date_sda );
 
 void setup_date_display()
 {
