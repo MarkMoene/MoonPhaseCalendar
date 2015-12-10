@@ -77,25 +77,38 @@ CASE( "Convenience: setbit manipulates proper bit" )
     }
 }
 
-CASE( "Electronics: Rotary encoder: ... [.]" )
+CASE( "Electronics: Rotary encoder: ... [.rotary]" )
 {
     mock_setup();
     EXPECT( !"Implement" );
 }
 
-CASE( "Electronics: Button: ... [.]" )
+CASE( "Electronics: Button: ... [.button]" )
 {
     mock_setup();
     EXPECT( !"Implement" );
 }
 
-CASE( "Electronics: Date display: ... [.]" )
+CASE( "Electronics: Date display reports 31 Dec as 3112 [display]" )
 {
     mock_setup();
-    EXPECT( !"Implement" );
+
+    display_date( {2015, 12, 31}, pause_ms(0) );
+
+    EXPECT( display.m_value == 3112 );
 }
 
-CASE( "Electronics: Moon phase display sets pins properly" )
+CASE( "Electronics: Date display reports 1 Jan as 0101 [display]" )
+{
+    mock_setup();
+
+    display_date( {2016,  1,  1}, pause_ms(0) );
+
+    // no leading '0' here as that signifies octal
+    EXPECT( display.m_value == /*0*/101 );
+}
+
+CASE( "Electronics: Moon phase display sets pins properly [moon]" )
 {
     static int pattern[] =
     {
