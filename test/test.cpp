@@ -12,6 +12,8 @@
 #include <iomanip>
 #include <ostream>
 
+using pause_ms = int;
+
 template< typename T >
 T setbit( T const x, int const pos, bool const on )
 {
@@ -194,7 +196,7 @@ CASE( "Acceptance: New moon on 13 Oct 2015 [.accept]" )
 {
     mock_setup();
 
-    Date next = once( {2015, 10, 13} );
+    Date next = once( {2015, 10, 13}, pause_ms(0) );
 
     EXPECT(   next == ( Date{2015, 10, 14} ) );
     EXPECT(   1310 == display.m_value );
@@ -205,7 +207,7 @@ CASE( "Acceptance: First quarter on 20 Oct 2015 [.accept]" )
 {
     mock_setup();
 
-    Date next = once( {2015, 10, 20} );
+    Date next = once( {2015, 10, 20}, pause_ms(0) );
 
     EXPECT(   next == ( Date{2015, 10, 21} ) );
     EXPECT(   2010 == display.m_value );
@@ -216,7 +218,7 @@ CASE( "Acceptance: Full moon on 27 Oct 2015 [.accept]" )
 {
     mock_setup();
 
-    Date next = once( {2015, 10, 27} );
+    Date next = once( {2015, 10, 27}, pause_ms(0) );
 
     EXPECT(   next == ( Date{2015, 10, 28} ) );
     EXPECT(   2710 == display.m_value );
@@ -227,7 +229,7 @@ CASE( "Acceptance: Last quarter on 3 Nov 2015 [.accept]" )
 {
     mock_setup();
 
-    Date next = once( {2015, 11, 3} );
+    Date next = once( {2015, 11, 3}, pause_ms(0) );
 
     EXPECT(   next == ( Date{2015, 11, 4} ) );
     EXPECT(    311 == display.m_value );

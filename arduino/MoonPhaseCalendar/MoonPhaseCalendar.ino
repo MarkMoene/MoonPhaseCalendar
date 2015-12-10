@@ -40,6 +40,8 @@ const int pin_date_clk = 2;
 
 // Date display:
 
+using Pause = int;
+
 struct Date
 {
     int year;
@@ -57,7 +59,7 @@ void setup_date_display()
     display.setBrightness( max_brightness );
 }
 
-void display_pause( int const pause_ms )
+void display_pause( Pause const pause_ms )
 {
     delay( pause_ms );
 }
@@ -70,7 +72,7 @@ void display_blank()
     display.setSegments( segments, 4, 0 );
 }
 
-void display_number( int const x, int const pause_ms )
+void display_number( int const x, Pause const pause_ms )
 {
     using leading_zeros = bool;
     using length = uint8_t;
@@ -81,7 +83,7 @@ void display_number( int const x, int const pause_ms )
     display.showNumberDec( x, leading_zeros(true), length(4), pos(0) );
 }
 
-void display_date( Date const date, int const pause_ms = display_blank_pause_ms )
+void display_date( Date const date, Pause const pause_ms )
 {
     // blank, pause, yyyy, pause, blank, pause, ddmm
     display_number( date.year, pause_ms );
@@ -261,9 +263,9 @@ void setup()
     setup_moon_phase_display();
 }
 
-Date once( Date date )
+Date once( Date date, Pause pause_ms = display_blank_pause_ms )
 {
-    display_date( date );
+    display_date( date, pause_ms );
     display_moon_phase( moon_phase( date ) );
 
     return next_date( date );
