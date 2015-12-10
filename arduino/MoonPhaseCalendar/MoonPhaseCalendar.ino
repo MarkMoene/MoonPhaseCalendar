@@ -66,10 +66,13 @@ void display_pause( Pause const pause_ms )
 
 void display_blank()
 {
+    using length = uint8_t;
+    using pos = uint8_t;
+
     uint8_t const segs_off   = 0;
     uint8_t const segments[] = { segs_off, segs_off, segs_off, segs_off };
 
-    display.setSegments( segments, 4, 0 );
+    display.setSegments( segments, length(4), pos(0) );
 }
 
 void display_number( int const x, Pause const pause_ms )
