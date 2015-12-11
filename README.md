@@ -10,7 +10,7 @@ For [Arduino](https://www.arduino.cc/), using an [Adafruit Pro Trinket](https://
 
 The moon phase calendar shows a date and the [moon phase](http://www.timeanddate.com/astronomy/moon/about-moon-phases.html) for that date. The date starts at a pre-programmed start date. A rotary encoder lets you adjust the date forward and backward. As an alternative to the rotary encoder you can use a push button to advance the date.
 
-The date is shown on a 4-digit 8-segment display as `ddmm`, alternating with the year shown as `yyyy`. The moon phase is presented as one of eight phases via four series of LEDs.
+The date is shown on a 4-digit 8-segment display as the year `yyyy`, quickly followed by the day and month as `ddmm`. The moon phase is presented as one of eight phases via four series of LEDs.
 
 In the initial stages of creating the planned functionality, we'll omit the manual inputs and automatically advance the date once a second.
 
