@@ -87,7 +87,7 @@ This installs the library in the `Arduino\libraries\TM1637-1.0.0` subdirectory i
 
 ### Developing and testing the software
 
-Initially we develop the program without the hardware being available. To gain confidence that what we develop makes sense and works, we develop the program guided by a specification that we implement as test cases. This approach is called [test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development), or test-driven design, depending what you'd like to emphasise. 
+Initially we develop the program without the hardware being available. To gain confidence that what we develop makes sense and works, we develop the program guided by a specification that we implement as test cases that we run as a PC program. This approach is called [test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development), or test-driven design, depending what you'd like to emphasise. 
 
 Here is how we go about it:
 
