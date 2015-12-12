@@ -83,9 +83,30 @@ The program uses the [Grove 4-Digit Display](http://www.seeedstudio.com/wiki/Gro
 - Select *Sketch > Include Library > .ZIP Library...* and 
 - Select the downloaded file `TM1637-1.0.0.zip`.
 
-This installs the library in the `Arduino\libraries\TM1637-1.0.0` subdirectory in your home directory. The library appears under *Contributed libraries* at the bottom of the *Sketch > Include Library* list. You may remove the downloaded .zip file now.
+This installs the library in the `Arduino\libraries\TM1637-1.0.0` subdirectory in your home directory. The library appears under *Contributed libraries* at the bottom of the *Sketch > Include Library* list. You may now remove the downloaded .zip file.
 
 ### Developing and testing the software
+
+Initially we develop the program without the hardware being available. To gain confidence that what we develop makes sense and works, we develop the program guided by a specification that we implement as test cases. This approach is called [test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development), or test-driven design, depending what you'd like to emphasise. 
+
+Here is how we go about it:
+
+In our [test program](test/test.cpp) we:
+- include the file [arduino.hpp](test/arduino.hpp) in which we emulate elements from the Arduino environment that we need, such as `pinMode()` and `digitalWrite()`, in a form that we can use with our tests;
+- include the file to contain our [Arduino program](arduino/MoonPhaseCalendar/MoonPhaseCalendar.ino) to get access to the application code;
+- include the single-header [*lest* test framework](test/lest.hpp) and other include files we need.
+
+This approach works well if our Arduino program is relatively small and is present in a single file.
+
+Then we write the specification (tests) and the application code in a mix of [test-first](https://en.wikipedia.org/wiki/Test-driven_development) and test-after style. Driving the development of the application code from the specification automatically leads to code that *can* be tested and prevents us from writing code for which there's no need [14]. To enable end-to-end testing, we extract the functionality that appears in `loop()` to the single function `once( Date date, ...)` so that it can be run once in a test (see the [acceptance tests](https://github.com/MarkMoene/MoonPhaseCalendar/blob/master/test/test.cpp#L208)).
+
+The test program can be compiled and run from a console or [cmd prompt](https://en.wikipedia.org/wiki/Cmd.exe) using the scripts [mk-gcc](test/mk-gcc.bat) and [mk-msvc](test/mk-msvc.bat), depending on the compiler you'd like to use. If all is well, the tests produce no output. If you want to see the passing tests run, use `test --pass`.
+
+To see the tests that are available, issue `test --list`. If you use `test --list @` you'll see several more tests that are not run unless you specifically mention them on the command line. These extra test are not run at default due to the *tag* that starts with `[.` in their name.
+
+There's one [test tagged *[.app]*](https://github.com/MarkMoene/MoonPhaseCalendar/blob/master/test/test.cpp#L252) that acts as a small application. It shows a date with corresponding moonphase on the console, continually advancing the date, e.g. `(2016, 2,29) (|...`. 
+
+Finally, even without the peripherals connected to the Pro Trinket board we can perform a useful test with the Arduino code *running on the board*. We locate the left-most segment of the 4-segment moon phase indicator on the onboard LED and compile and upload the program that advances the date once a second to the Pro Trinket. Then we notice the onboard LED going on for about 14&nbsp;s and off for 14&nbsp;s. This corresponds to the moon-month of 29 days: 1 s/day * 29  days/full moon means repetition of the cycle each 29 s, or 14.5 s between LED going on and off.
 
 Notes and references
 ----------------------
@@ -110,6 +131,10 @@ Notes and references
 [11] [Microsoft Visual C++ 2015](https://www.visualstudio.com/).  
 [12] [GNU Compiler Collection binary distributions](https://gcc.gnu.org/install/binaries.html).  
 [13] [Stephan T. Lavavej's MinGW distribution](http://nuwen.net/mingw.html).
+
+### Design and test
+[14] Wikipedia. [Test-Driven Development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development), [section benefits](https://en.wikipedia.org/wiki/Test-driven_development#Benefits).    
+[15] Martin Moene. [*lest* test framework](https://github.com/martinmoene/lest).
 
 Appendix A: test specification
 -------------------------------
