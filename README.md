@@ -16,6 +16,16 @@ In the initial stages of creating the planned functionality, we'll omit the manu
 
 Moon phase calendar hardware
 ------------------------------
+![Electronic parts of the Moon Phase Calendar](doc/image/moonphasecalendar_parts.jpg)
+
+We use the following components:
+- [Adafruit Pro Trinket - 3V 12MHz](https://www.adafruit.com/products/2010) (*)
+- [Rotary encoder](), input initially unused
+- [Push button](), alternate input initially unused
+- [Grove - 4-Digit Display](http://www.seeedstudio.com/wiki/Grove_-_4-Digit_Display)
+- 16 LEDs (2 groups of three, 2 groups of five LEDs)
+
+(*) You can also use the 5V version.
 
 The diagram below gives a schematic overview of the circuitry.
 ```
@@ -40,15 +50,6 @@ Rotary encoder        |               |
                               |
                              ---
 ```
-
-We use the following components:
-- [Adafruit Pro Trinket - 3V 12MHz](https://www.adafruit.com/products/2010) (*)
-- [Rotary encoder](), input initially unused
-- [Push button](), alternate input initially unused
-- [Grove - 4-Digit Display](http://www.seeedstudio.com/wiki/Grove_-_4-Digit_Display)
-- 16 LEDs (2 groups of three, 2 groups of five LEDs)
-
-(*) You can also use the 5V version.
 
 Moon phase calendar algorithms
 --------------------------------
