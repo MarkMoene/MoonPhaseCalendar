@@ -89,9 +89,10 @@ This installs the library in the `Arduino\libraries\TM1637-1.0.0` subdirectory i
 
 Initially we develop the program without the hardware being available. To gain confidence that what we develop makes sense and works, we develop the program guided by a specification that we implement as test cases that we run as a PC program. This approach is called [test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development), or test-driven design, depending what you'd like to emphasise. 
 
-Here is how we go about it:
+Here is how we go about it. 
 
 In our [test program](test/test.cpp) we:
+
 - include the file [arduino.hpp](test/arduino.hpp) in which we emulate elements from the Arduino environment that we need, such as `pinMode()` and `digitalWrite()`, in a form that we can use with our tests;
 - include the file to contain our [Arduino program](arduino/MoonPhaseCalendar/MoonPhaseCalendar.ino) to get access to the application code;
 - include the single-header [*lest* test framework](test/lest.hpp) and other include files we need.
@@ -102,7 +103,7 @@ Then we write the specification (tests) and the application code in a mix of [te
 
 The test program can be compiled and run from a console or [cmd prompt](https://en.wikipedia.org/wiki/Cmd.exe) using the scripts [mk-gcc](test/mk-gcc.bat) and [mk-msvc](test/mk-msvc.bat), depending on the compiler you'd like to use. If all is well, the tests produce no output. If you want to see the passing tests run, use `test --pass`.
 
-To see the tests that are available, issue `test --list`. If you use `test --list @` you'll see several more tests that are not run unless you specifically mention them on the command line. These extra test are not run at default due to the *tag* that starts with `[.` in their name.
+To see the tests that are available, issue `test --list-tests`. If you use `test --list-tests @` you'll see several more tests that are not run unless you specifically mention them on the command line. These extra test are not run at default due to the *tag* that starts with `[.` in their name.
 
 There's one [test tagged *[.app]*](https://github.com/MarkMoene/MoonPhaseCalendar/blob/master/test/test.cpp#L252) that acts as a small application. It shows a date with corresponding moonphase on the console, continually advancing the date, e.g. `(2016, 2,29) (|...`. 
 
