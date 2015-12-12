@@ -167,4 +167,5 @@ Acceptance: New moon on 13 Oct 2015 [.accept]
 Acceptance: First quarter on 20 Oct 2015 [.accept]
 Acceptance: Full moon on 27 Oct 2015 [.accept]
 Acceptance: Last quarter on 3 Nov 2015 [.accept]
-App: date-moon phase [.app]```
+App: date-moon phase [.app]
+```
