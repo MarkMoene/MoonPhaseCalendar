@@ -8,7 +8,7 @@ For [Arduino](https://www.arduino.cc/), using an [Adafruit Pro Trinket](https://
 - [Notes and references](#notes-and-references)  
 - [Appendix A: test specification](#appendix-a-test-specification)  
 
-The moon phase calendar shows a date and the [moon phase](http://www.timeanddate.com/astronomy/moon/about-moon-phases.html) for that date. The date starts at a pre-programmed start date. A rotary encoder lets you adjust the date forward and backward. As an alternative to the rotary encoder you can use a push button to advance the date.
+The moon phase calendar shows a date and the [moon phase](http://www.timeanddate.com/astronomy/moon/about-moon-phases.html) for that date. The date starts at a pre-programmed date. A rotary encoder lets you adjust the date forward and backward. As an alternative to the rotary encoder you can use a push button to advance the date.
 
 The date is shown on a 4-digit 8-segment display as the year `yyyy`, quickly followed by the day and month as `ddmm`. The moon phase is presented as one of eight phases via four series of LEDs.
 
@@ -74,7 +74,7 @@ The moon phase calendar software is developed using both the Arduino IDE and a s
 In what follows, it is expected that the [Arduino IDE](https://www.arduino.cc/en/Main/Software) is available. If you want to compile and run the tests, a C++11 compiler such as [GNU C++](https://gcc.gnu.org/) or [Visual C++ 2015](https://www.visualstudio.com/) is needed, see [11-13]. 
  
 ### Setup Arduino IDE for Pro Trinket
-To be able to compile programs for the Pro Trinket board and to upload the result to it via [USB](https://en.wikipedia.org/wiki/USB), several settings must made in the Arduino IDE. This is described in [Setup Arduino IDE for Pro Trinket](doc/Setup Arduino IDE for Pro Trinket.md).
+To be able to compile programs for the Pro Trinket board and to upload the result to it via [USB](https://en.wikipedia.org/wiki/USB), several settings must be made in the Arduino IDE. This is described in [Setup Arduino IDE for Pro Trinket](doc/Setup Arduino IDE for Pro Trinket.md).
 
 ### Install Arduino library for TM1637 (LED Driver)
 The program uses the [Grove 4-Digit Display](http://www.seeedstudio.com/wiki/Grove_-_4-Digit_Display) with a [TM1637 chip](http://blog.avishorp.me/2014/03/arduino-library-for-tm1637-display.html) to present the date. To enable using it from our program, install the [Arduino library for TM1637](https://github.com/avishorp/TM1637) as follows:
@@ -84,7 +84,7 @@ The program uses the [Grove 4-Digit Display](http://www.seeedstudio.com/wiki/Gro
 - Select *Sketch > Include Library > .ZIP Library...* and 
 - Select the downloaded file `TM1637-1.0.0.zip`.
 
-This installs the library in the `Arduino\libraries\TM1637-1.0.0` subdirectory in your home directory. The library appears under *Contributed libraries* at the bottom of the *Sketch > Include Library* list. You may now remove the downloaded .zip file.
+On Windows this installs the library in the `Arduino\libraries\TM1637-1.0.0` subdirectory in your home directory. The library appears under *Contributed libraries* at the bottom of the *Sketch > Include Library* list. You may now remove the downloaded .zip file.
 
 ### Developing and testing the software
 
